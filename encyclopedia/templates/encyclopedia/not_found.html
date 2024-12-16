@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Not found
+{% endblock %}
+
+{% block body %}
+    {% if code == 0 %}
+       <h1 style="font-family: consolas,sans-serif; color: red;">Error: No file named {{name}} found!</h1>
+    {% else %}
+       <h1>Nothing found</h1>
+    {%endif%}
+    <h3>You can go to other pages:</h3>
+    <ul>
+        {% for entry in entries %}
+            <li><a href="/wiki/{{entry}}">{{ entry }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

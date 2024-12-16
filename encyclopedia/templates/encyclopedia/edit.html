@@ -1,0 +1,12 @@
+{% extends 'encyclopedia/layout.html' %}
+{%block title%}Edit{%endblock%}
+{% block body %}
+<form action="{% url 'editf' %}", method="post">
+    {% csrf_token %}
+    <input type="hidden" name="title" required id="id_title" value="{{title1}}">
+    <p style="margin: 0%;"><label for="id_title">edit content:</label></p>
+    <textarea name="details" required id="id_details" style="height: 30vh;width: 80%;" autocomplete="off">{{markdown_content}}</textarea>
+    <br>
+    <button type="submit" style="text-align: end;">Save Changes</button>
+</form>
+{% endblock %}

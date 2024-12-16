@@ -1,0 +1,15 @@
+{% extends 'encyclopedia/layout.html' %}
+{%block title%}Add{%endblock%}
+{% block body %}
+<h1>Make a new wiki page!</h1>
+<form action="{% url 'new' %}", method="post">
+    {% csrf_token %}
+    <label for="id_title">title:</label>
+    <input type="text" name="title" required id="id_title" placeholder="enter your title here" autocomplete="off">
+    <br>
+    <p style="margin: 0%;"><label for="id_title">content:</label></p>
+    <textarea name="details" required id="id_details" placeholder="Type markdown code here" style="height: 30vh;width: 80%;" autocomplete="off"></textarea>
+    <br>
+    <button type="submit" style="text-align: end;">Submit</button>  
+</form>
+{% endblock %}

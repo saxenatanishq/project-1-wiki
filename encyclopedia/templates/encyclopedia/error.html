@@ -1,0 +1,8 @@
+{% extends 'encyclopedia/layout.html' %}
+{%block title%}
+Error
+{%endblock%}
+{% block body %}
+<h1 style="font-family: consolas,sans-serif;color: red;">Error: "{{title}}" already exists!</h1>
+<a href="/add">Go back</a>
+{% endblock %}
